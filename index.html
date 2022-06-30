@@ -34,12 +34,15 @@
     import numpy as np
     from methods import catenary
 
+    fig, ax = plt.subplots()
+
     x = np.linspace(-1, 1, 100)
     y = catenary(x=x, a=1, c=0)
     plt.plot(x, y, label=str(a))
     
     plt.legend()
-    plt.show()
+    fig
+
   </py-script>
 
 
