@@ -1,26 +1,53 @@
 <html>
-    <head>
-      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-      <py-env>
-        - numpy
-        - matplotlib
-      </py-env>
-    </head>
 
-  <body>
-    <h1>Let's plot random numbers</h1>
-    <div id="plot"></div>
-    <py-script output="plot">
-      import matplotlib.pyplot as plt
-      import numpy as np
+<head>
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  <py-env>
+    - numpy
+    - matplotlib
+    - math
+    - ./methods.py
 
-      x = np.random.randn(1000)
-      y = np.random.randn(1000)
+  </py-env>
+</head>
 
-      fig, ax = plt.subplots()
-      ax.scatter(x, y)
-      fig
-    </py-script>
-  </body>
+<body>
+  <h1>Let's plot random numbers</h1>
+  <div id="plot"></div>
+  <py-script output="plot">
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    x = np.random.randn(1000)
+    y = np.random.randn(1000)
+
+    fig, ax = plt.subplots()
+    ax.scatter(x, y)
+    fig
+  </py-script>
+
+  <h1>Let's plot random numbers</h1>
+  <div id="plot"></div>
+  <py-script output="plot">
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from methods import catenary
+
+    x = np.linspace(-1, 1, 100)
+    y = catenary(x=x, a=1, c=0)
+    plt.plot(x, y, label=str(a))
+    
+    plt.legend()
+    plt.show()
+  </py-script>
+
+
+
+
+
+
+
+</body>
+
 </html>
