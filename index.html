@@ -6,8 +6,6 @@
   <py-env>
     - numpy
     - matplotlib
-    - methods.py
-
   </py-env>
 </head>
 
@@ -32,6 +30,14 @@
     import matplotlib.pyplot as plt
     import numpy as np
     from methods import catenary
+
+    def catenary(**kwargs):
+    
+      a= kwargs.get("a", 1)
+      x = kwargs.get("x", np.linspace(0, 1, 100))
+      c = kwargs.get("c", 0)
+    
+      return np.divide(np.cosh(a*x), a) + c
 
     fig, ax = plt.subplots()
 
